@@ -1,24 +1,22 @@
 // index.js
+const ProductManager = require('./ProductManager');
 
-const Alumno = require('./Alumno');
+// Crear instancia de ProductManager
+const manager = new ProductManager();
 
-// Crear instancia de Alumno
-const alumno1 = new Alumno("Juan", "Pérez", 20, "Ingeniería en Sistemas");
+// Agregar productos
+manager.addProduct({ title: "Laptop", description: "Dell Inspiron 15", price: 800 });
+manager.addProduct({ title: "Mouse", description: "Mouse inalámbrico", price: 20 });
+manager.addProduct({ title: "Teclado", description: "Teclado mecánico", price: 50 });
 
-// Probar métodos
-console.log("Datos del Alumno:", alumno1.obtenerDatos());
-console.log("Carrera:", alumno1.obtenerCarrera());
-console.log("Edad:", alumno1.retornarEdad());
+// Mostrar todos los productos
+console.log("Lista de productos:");
+console.table(manager.getProducts());
 
-// Modificar edad
-alumno1.modificarEdad(21);
-console.log("Edad actualizada:", alumno1.retornarEdad());
+// Buscar producto por ID
+console.log("Producto con ID 2:");
+console.log(manager.getProductById(2));
 
-// Agregar materias
-alumno1.agregarMateria("Matemáticas");
-alumno1.agregarMateria("Programación");
-alumno1.agregarMateria("Base de Datos");
-
-// Mostrar materias
-console.log("Materias:");
-alumno1.mostrarMaterias();
+// Intentar buscar un producto inexistente
+console.log("Producto con ID 99:");
+console.log(manager.getProductById(99));
