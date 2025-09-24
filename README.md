@@ -15,9 +15,3 @@ En esta actividad se creó una clase **Alumno** en Node.js con atributos y méto
 
 ```bash
 node index.js
-
-/ (raíz del repositorio)
-│── actividad01/
-│ │── Alumno.js
-│ │── index.js
-│ │── README.md
